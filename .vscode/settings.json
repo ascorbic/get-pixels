@@ -1,6 +1,11 @@
 {
-    "deno.enable": true,
     "deno.unstable": true,
+    "deno.enablePaths": [
+        "./src",
+        "./test-node",
+        "mod.ts",
+        "./scripts"
+    ],
     "editor.formatOnSave": true,
     "[typescript]": {
         "editor.defaultFormatter": "denoland.vscode-deno"
