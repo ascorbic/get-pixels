@@ -1,5 +1,8 @@
 import { decode as jpgDecoder } from "https://deno.land/x/jpegts@1.1/mod.ts";
-import { decode as pngDecoder } from "https://deno.land/x/pngs@0.1.1/mod.ts";
+import {
+  ColorType,
+  decode as pngDecoder,
+} from "https://deno.land/x/pngs@0.1.1/mod.ts";
 import {
   DecoderMap,
   getPixels as getPixelsImpl,
@@ -7,11 +10,33 @@ import {
 } from "./src/get-pixels.ts";
 export { getDataFromUrl, getFormat } from "./src/get-pixels.ts";
 
+function rgbToRgba(
+  data: Uint8Array,
+  width: number,
+  height: number,
+): Uint8Array {
+  const rgba = new Uint8Array(width * height * 4);
+  for (let i = 0, j = 0; i < data.length; i += 3, j += 4) {
+    rgba[j] = data[i];
+    rgba[j + 1] = data[i + 1];
+    rgba[j + 2] = data[i + 2];
+    rgba[j + 3] = 255;
+  }
+  return rgba;
+}
+
 const decoders: DecoderMap = {
   jpg: jpgDecoder,
-  png: (image: Uint8Array) => {
-    const { width, height, image: data } = pngDecoder(image);
-    return { width, height, data };
+  png: (source: Uint8Array) => {
+    const { width, height, image, colorType } = pngDecoder(source);
+    const data = colorType === ColorType.RGB
+      ? rgbToRgba(image, width, height)
+      : image;
+    return {
+      width,
+      height,
+      data,
+    };
   },
 };
 
