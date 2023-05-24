@@ -11,8 +11,8 @@ import {
 export { getDataFromUrl, getFormat } from "./get-pixels.ts";
 
 const decoders: DecoderMap = {
-  jpg: jpgDecoder,
-  png: (image: Uint8Array) => {
+  jpg: (image) => jpgDecoder(image, { useTArray: true }),
+  png: (image) => {
     return new Promise((resolve, reject) => {
       const png: PNGType = new PNG({ filterType: 4 });
       png.parse(Buffer.from(image), (err, decoded) => {
