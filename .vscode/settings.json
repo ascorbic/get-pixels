@@ -4,7 +4,8 @@
         "./src",
         "./test-node",
         "mod.ts",
-        "./scripts"
+        "./scripts",
+        "./test",
     ],
     "editor.formatOnSave": true,
     "[typescript]": {
