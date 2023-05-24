@@ -1,5 +1,7 @@
 import { decode as jpgDecoder } from "https://esm.sh/jpeg-js@0.4.4";
-import { PNG } from "https://esm.sh/pngjs@7.0.0";
+// @ts-ignore: the submodule is not typed
+import { PNG } from "https://esm.sh/pngjs@7.0.0/browser.js";
+import type { PNG as PNGType } from "https://esm.sh/pngjs@7.0.0";
 import {
   DecoderMap,
   getPixels as getPixelsImpl,
@@ -12,7 +14,7 @@ const decoders: DecoderMap = {
   jpg: jpgDecoder,
   png: (image: Uint8Array) => {
     return new Promise((resolve, reject) => {
-      const png = new PNG({ filterType: 4 });
+      const png: PNGType = new PNG({ filterType: 4 });
       png.parse(Buffer.from(image), (err, decoded) => {
         if (err) {
           reject(err);
