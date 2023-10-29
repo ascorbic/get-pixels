@@ -38,7 +38,7 @@ Deno.test("parsing", async (t) => {
     const image = await getPixels(pngData);
     assertEquals(image.width, 80);
     assertEquals(image.height, 60);
-    assertEquals(image.data.length, 80 * 60 * 3);
+    assertEquals(image.data.length, 80 * 60 * 4);
   });
 
   await t.step("jpg", async () => {
@@ -54,7 +54,7 @@ Deno.test("url", async (t) => {
     const image = await getPixels(pngUrl);
     assertEquals(image.width, 80);
     assertEquals(image.height, 60);
-    assertEquals(image.data.length, 80 * 60 * 3);
+    assertEquals(image.data.length, 80 * 60 * 4);
   });
 
   await t.step("jpg", async () => {
