@@ -44,7 +44,9 @@ export function decodeImageData(
 }
 
 export async function getDataFromUrl(url: string | URL): Promise<Uint8Array> {
-  const response = await fetch(url.toString());
+  const response = await fetch(url, {
+    headers: { Accept: "image/jpeg,image/png,*/*" },
+  });
   const data = await response.arrayBuffer();
   return new Uint8Array(data);
 }
