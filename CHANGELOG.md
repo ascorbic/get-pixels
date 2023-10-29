@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/ascorbic/get-pixels/compare/v1.2.0...v1.2.1) (2023-10-29)
+
+
+### Bug Fixes
+
+* sent accept header ([#11](https://github.com/ascorbic/get-pixels/issues/11)) ([2624f6a](https://github.com/ascorbic/get-pixels/commit/2624f6aae1318e8818e77fc70afcb1ea2de40534))
+
 ## [1.2.0](https://github.com/ascorbic/get-pixels/compare/v1.1.0...v1.2.0) (2023-05-24)
 
 
