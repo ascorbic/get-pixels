@@ -9,7 +9,6 @@ await build({
     deno: {
       test: "dev",
     },
-    undici: true,
     custom: [
       {
         module: "node:buffer",
