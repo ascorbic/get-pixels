@@ -1,3 +1,4 @@
+import { fetch } from "https://esm.sh/ofetch@1.3.3";
 export type ImageFormat = "jpg" | "png";
 
 export interface Decoder {
