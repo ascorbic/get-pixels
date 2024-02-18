@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/ascorbic/get-pixels/compare/v1.2.1...v1.2.2) (2024-02-18)
+
+
+### Bug Fixes
+
+* switch polyfill from undici to ofetch ([#14](https://github.com/ascorbic/get-pixels/issues/14)) ([1de69af](https://github.com/ascorbic/get-pixels/commit/1de69af77bc7ae6b01f04ae0b54d5cb7b743e3b7))
+
 ## [1.2.1](https://github.com/ascorbic/get-pixels/compare/v1.2.0...v1.2.1) (2023-10-29)
 
 
