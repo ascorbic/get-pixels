@@ -1,6 +1,6 @@
-import { assertEquals } from "https://deno.land/std@0.172.0/testing/asserts.ts";
+import { assertEquals } from "@std/testing/asserts";
 import { getDataFromUrl, getFormat, getPixels } from "../src/index.ts";
-import { encode } from "https://esm.sh/blurhash@2.0.4";
+import { encode } from "blurhash";
 
 Deno.test("Size detection", async () => {
   const jpgData = await getPixels(

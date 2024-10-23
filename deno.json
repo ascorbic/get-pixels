@@ -1,0 +1,20 @@
+{
+	"name": "@ascorbic/pixels",
+	"version": "1.2.3",
+	"exports": "./mod.ts",
+	"license": "MIT",
+	"fmt": {
+		"useTabs": true
+	},
+	"imports": {
+		"@deno/dnt": "jsr:@deno/dnt",
+		"@std/testing": "jsr:@std/testing",
+		"blurhash": "npm:blurhash@^2.0.5",
+		"jpeg-js": "npm:jpeg-js@^0.4.4",
+		"jpegts/": "./vendor/deno.land/x/jpegts@1.1/",
+		"ofetch": "npm:ofetch@1.3.3",
+		"pngjs": "npm:pngjs@7.0.0",
+		"pngs/": "./vendor/deno.land/x/pngs@0.1.1/",
+		"https://deno.land/x/lz4@v0.1.2/": "./vendor/deno.land/x/lz4@v0.1.2/"
+	}
+}
