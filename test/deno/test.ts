@@ -1,6 +1,6 @@
 import { assertEquals, assertRejects } from "jsr:@std/assert";
 
-import { getFormat, getPixels } from "../mod.ts";
+import { getFormat, getPixels } from "../../mod.ts";
 
 const pngData = await Deno.readFile(new URL("test.png", import.meta.url));
 const jpgData = await Deno.readFile(new URL("test.jpg", import.meta.url));

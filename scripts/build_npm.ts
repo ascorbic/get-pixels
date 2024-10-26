@@ -16,7 +16,7 @@ await build({
 			},
 		],
 	},
-	rootTestDir: "./test-node",
+	rootTestDir: "./test/node",
 	package: {
 		// package.json properties
 		name: "@unpic/pixels",

@@ -1,10 +1,10 @@
 {
 	"deno.enablePaths": [
 		"./src",
-		"./test-node",
+		"./test/node",
 		"mod.ts",
 		"./scripts",
-		"./test",
+		"./test/deno",
 	],
 	"editor.formatOnSave": true,
 	"[typescript]": {

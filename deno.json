@@ -9,6 +9,11 @@
 	"tasks": {
 		"npm": "deno run -A ./scripts/build_npm.ts"
 	},
+	"test": {
+		"include": [
+			"test/deno"
+		]
+	},
 	"imports": {
 		"@deno/dnt": "jsr:@deno/dnt",
 		"@std/testing": "jsr:@std/testing",

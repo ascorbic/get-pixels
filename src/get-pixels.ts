@@ -43,6 +43,9 @@ export function decodeImageData(
 	throw new Error("Unsupported format");
 }
 
+/**
+ * Loads an image from a URL and returns it as a Uint8Array without decoding it.
+ */
 export async function getDataFromUrl(url: string | URL): Promise<Uint8Array> {
 	const response = await fetch(url, {
 		headers: { Accept: "image/jpeg,image/png,*/*" },
@@ -55,7 +58,7 @@ export async function getDataFromUrl(url: string | URL): Promise<Uint8Array> {
 }
 
 /**
- * Gets the raw pixel data from an image source.
+ * Gets the raw, decoded pixel data from an image source.
  * The source can be a URL, a string containing the URL, a Uint8Array containing the image data,
  * or an ArrayBuffer containing the image data.
  */
@@ -73,6 +76,9 @@ export async function getPixels(
 	}
 }
 
+/**
+ * A function that gets the raw pixel data from an image source.
+ */
 export type GetPixelsFunction = (
 	source: URL | string | Uint8Array | ArrayBuffer,
 ) => Promise<ImageData>;
