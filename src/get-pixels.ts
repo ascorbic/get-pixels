@@ -47,6 +47,9 @@ export async function getDataFromUrl(url: string | URL): Promise<Uint8Array> {
 	const response = await fetch(url, {
 		headers: { Accept: "image/jpeg,image/png,*/*" },
 	});
+	if (!response.ok) {
+		throw new Error(`Failed to fetch image: ${response.statusText}`);
+	}
 	const data = await response.arrayBuffer();
 	return new Uint8Array(data);
 }
