@@ -1,5 +1,5 @@
 import { assertEquals } from "jsr:@std/assert";
-import { getDataFromUrl, getFormat, getPixels } from "../../src/index.ts";
+import { getDataFromUrl, getFormat, getPixels } from "../src/index.ts";
 import { encode } from "npm:blurhash";
 
 Deno.test("Size detection", async () => {
