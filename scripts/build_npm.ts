@@ -1,4 +1,4 @@
-import { build, emptyDir } from "@deno/dnt";
+import { build, emptyDir } from "jsr:@deno/dnt";
 
 await emptyDir("./npm");
 
@@ -37,6 +37,14 @@ await build({
 		publishConfig: {
 			access: "public",
 		},
+	},
+	filterDiagnostic(diagnostic) {
+		if (
+			diagnostic.file?.fileName.includes("@std/assert")
+		) {
+			return false;
+		}
+		return true;
 	},
 });
 
