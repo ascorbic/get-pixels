@@ -5,8 +5,8 @@
 This module will take the raw data or URL of a PNG or JPEG image and return the
 decoded pixels and dimensions of the image.
 
-:caution: If you have previously installed this via deno.land/x, please switch
-to [using JSR](https://jsr.io/@unpic/pixels).
+:warning: **If you have previously installed this via deno.land/x, please switch
+to [using JSR](https://jsr.io/@unpic/pixels).** :warning:
 
 ## Usage
 
