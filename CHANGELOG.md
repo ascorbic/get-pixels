@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/ascorbic/get-pixels/compare/v1.2.2...v1.3.0) (2024-10-26)
+
+
+### Features
+
+* publish via JSR ([#17](https://github.com/ascorbic/get-pixels/issues/17)) ([e67b83d](https://github.com/ascorbic/get-pixels/commit/e67b83df862eb2007d4dc9aaa09a6c9519658328))
+
 ## [1.2.2](https://github.com/ascorbic/get-pixels/compare/v1.2.1...v1.2.2) (2024-02-18)
 
 
