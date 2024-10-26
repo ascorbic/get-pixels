@@ -12,7 +12,7 @@ import { getPixels } from "@unpic/pixels";
 
 // From a URL
 const { width, height, data } = await getPixels(
-  "http://placekitten.com/100/100",
+	"https://placecats.com/100/100",
 );
 
 // From a file
@@ -35,4 +35,5 @@ const format = getFormat(file);
 
 ## License
 
-© 2023 [Matt Kane](https://github.com/ascorbic). This project is MIT licensed.
+© 2023-2024 [Matt Kane](https://github.com/ascorbic). This project is MIT
+licensed.

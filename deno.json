@@ -20,6 +20,12 @@
 		"https://deno.land/x/lz4@v0.1.2/": "./vendor/deno.land/x/lz4@v0.1.2/"
 	},
 	"publish": {
-		"include": ["src", "vendor", "mod.ts", "README.md"]
+		"include": [
+			"src/get-pixels.ts",
+			"vendor",
+			"mod.ts",
+			"README.md",
+			"CHANGELOG.md"
+		]
 	}
 }
