@@ -13,7 +13,7 @@ jobs:
     - name: Setup Deno
       uses: denoland/setup-deno@v1
       with:
-        deno-version: vx.x.x    
+        deno-version: vx.x.x
     - name: Checkout
       uses: actions/checkout@v3
     - name: Test
@@ -34,3 +34,5 @@ jobs:
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       run: cd npm && npm publish --provenance --access public
+    - name: Publish to JSR
+      run: npx jsr publish

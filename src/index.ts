@@ -1,30 +1,31 @@
-import { decode as jpgDecoder } from "https://esm.sh/jpeg-js@0.4.4";
-// @ts-ignore: the submodule is not typed
-import { PNG } from "https://esm.sh/pngjs@7.0.0/browser.js";
-import type { PNG as PNGType } from "https://esm.sh/pngjs@7.0.0";
+import { decode as jpgDecoder } from "npm:jpeg-js";
+// @deno-types="npm:@types/pngjs"
+import { PNG } from "npm:pngjs/browser.js";
 import {
-  DecoderMap,
-  getPixels as getPixelsImpl,
-  GetPixelsFunction,
+	DecoderMap,
+	getPixels as getPixelsImpl,
+	GetPixelsFunction,
 } from "./get-pixels.ts";
+import { Buffer } from "node:buffer";
 
 export { getDataFromUrl, getFormat } from "./get-pixels.ts";
 
 const decoders: DecoderMap = {
-  jpg: (image) => jpgDecoder(image, { useTArray: true }),
-  png: (image) => {
-    return new Promise((resolve, reject) => {
-      const png: PNGType = new PNG({ filterType: 4 });
-      png.parse(Buffer.from(image), (err, decoded) => {
-        if (err) {
-          reject(err);
-        } else {
-          const { width, height, data } = decoded;
-          resolve({ width, height, data });
-        }
-      });
-    });
-  },
+	jpg: (image) => jpgDecoder(image, { useTArray: true }),
+	png: (image) => {
+		return new Promise((resolve, reject) => {
+			const png = new PNG({ filterType: 4 });
+			const buf = Buffer.from(image);
+			png.parse(buf, (err, decoded) => {
+				if (err) {
+					reject(err);
+				} else {
+					const { width, height, data } = decoded;
+					resolve({ width, height, data });
+				}
+			});
+		});
+	},
 };
 
 /**
@@ -33,5 +34,5 @@ const decoders: DecoderMap = {
  * or an ArrayBuffer containing the image data.
  */
 export const getPixels: GetPixelsFunction = (source) => {
-  return getPixelsImpl(source, decoders);
+	return getPixelsImpl(source, decoders);
 };
