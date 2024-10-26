@@ -27,7 +27,7 @@ jobs:
       run: deno task npm ${{steps.get_tag_version.outputs.TAG_VERSION}}
     - uses: actions/setup-node@v3
       with:
-        node-version: '18.x'
+        node-version: '22.x'
         registry-url: 'https://registry.npmjs.org'
     - name: npm publish
       if: startsWith(github.ref, 'refs/tags/')
@@ -39,4 +39,4 @@ jobs:
         jq --slurp '.[0].version as $version | .[1] | .version = $version' npm/package.json deno.json > deno.json.tmp && mv deno.json.tmp deno.json
         deno fmt deno.json
     - name: Publish to JSR
-      run: npx jsr publish
+      run: npx jsr publish --allow-dirty
